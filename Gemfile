@@ -28,4 +28,5 @@ group :test do
   gem 'brakeman', require: false
   gem 'fakeredis', require: "fakeredis/rspec"
   gem 'resque_spec'
+  gem 'shoulda-matchers', '~> 2.6.1'
 end
