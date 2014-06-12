@@ -26,7 +26,6 @@ end
 
 group :test do
   gem 'brakeman', require: false
-  gem 'shoulda-matchers'
   gem 'fakeredis', require: "fakeredis/rspec"
   gem 'resque_spec'
 end
