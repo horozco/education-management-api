@@ -4,6 +4,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.1.1'
+gem 'rails_admin'
 gem 'sass-rails', '~> 4.0.3'
 gem 'spring'
 gem 'therubyracer', platforms: :ruby
