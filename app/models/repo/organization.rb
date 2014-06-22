@@ -1,5 +1,7 @@
 module Repo
   class Organization < ::ActiveRecord::Base
-    validates_presence_of :name, :address, :email
+    validates :name, presence: true
+    validates :address, presence: true
+    validates :email, presence: true
   end
 end
