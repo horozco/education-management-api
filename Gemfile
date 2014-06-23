@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.1.1'
 gem 'rails_admin'
+gem 'rocket_pants'
 gem 'sass-rails', '~> 4.0.3'
 gem 'spring'
 gem 'therubyracer', platforms: :ruby
