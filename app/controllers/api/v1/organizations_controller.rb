@@ -3,7 +3,7 @@ module Api
     class OrganizationsController < ApiController
 
       def index
-        exposes Organization.all
+        expose Organization.all
       end
 
       def show
