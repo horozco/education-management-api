@@ -31,4 +31,5 @@ group :test do
   gem 'fakeredis', require: "fakeredis/rspec"
   gem 'resque_spec'
   gem 'shoulda-matchers', '~> 2.6.1'
+  gem 'turnip'
 end
