@@ -32,5 +32,4 @@ group :test do
   gem 'resque_spec'
   gem 'shoulda-matchers', '~> 2.6.1'
   gem 'turnip'
-  gem 'faraday'
 end
