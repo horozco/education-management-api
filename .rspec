@@ -1,4 +1,4 @@
 --color
---require spec_helper
 -r turnip/rspec
+--require spec_helper
 -I.
