@@ -12,7 +12,8 @@
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
-Dir.glob("spec/steps/**/*steps.rb") { |f| require f }
+require 'simplecov'
+SimpleCov.start
 
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
@@ -72,8 +73,6 @@ RSpec.configure do |config|
     # Prevents you from mocking or stubbing a method that does not exist on
     # a real object. This is generally recommended.
     mocks.verify_partial_doubles = true
-
-    config.include ExtraSteps
   end
 
 end

@@ -17,7 +17,6 @@ group :development, :test do
   gem "mocha", "~> 1.0.0"
   gem "pry", "~> 0.9.12"
   gem 'rspec-rails'
-  gem 'simplecov', require: false
   gem 'webmock', '< 1.14.0', require: false
 end
 
@@ -31,4 +30,5 @@ group :test do
   gem 'fakeredis', require: "fakeredis/rspec"
   gem 'resque_spec'
   gem 'shoulda-matchers', '~> 2.6.1'
+  gem 'simplecov', '~> 0.7.1', require: false
 end
