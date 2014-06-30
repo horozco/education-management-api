@@ -18,4 +18,26 @@ RSpec.describe Api::V1::OrganizationsController do
 
     it_behaves_like "successful API response", Hash
   end
+
+  describe "POST create" do
+    let(:params) do
+      { name: 'Test Org',
+        email: 'test@example.com',
+        address: 'Street 1' }
+    end
+
+    before do
+      post :create, version: 1, organization: params
+    end
+
+    it_behaves_like "successful API response", Hash
+
+    context "invalid params" do
+      let(:params) do
+        { name: 'test' }
+      end
+
+      it_behaves_like "unsuccessful API response"
+    end
+  end
 end
