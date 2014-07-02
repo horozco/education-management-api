@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::OrganizationsController do
+  before(:all) do
+    @organization = FactoryGirl.create(:organization)
+  end
+
   describe "GET index" do
     before do
       get :index, version: 1
@@ -11,8 +15,6 @@ RSpec.describe Api::V1::OrganizationsController do
 
   describe "GET show" do
     before do
-      @organization = FactoryGirl.build(:organization, id: 1)
-      allow(Organization).to receive(:find) { @organization }
       get :show, id: @organization.id, version: 1
     end
 
@@ -35,6 +37,28 @@ RSpec.describe Api::V1::OrganizationsController do
     context "invalid params" do
       let(:params) do
         { name: 'test' }
+      end
+
+      it_behaves_like "unsuccessful API response"
+    end
+  end
+
+  describe "PATCH update" do
+    let(:params) do
+      { name: 'Org Test',
+        email: 'test@example.com',
+        address: 'Street 1' }
+    end
+
+    before do
+      patch :update, version: 1, id: @organization.id, organization: params
+    end
+
+    it_behaves_like "successful API response", Hash
+
+    context "invalid params" do
+      let(:params) do
+        {name: ''}
       end
 
       it_behaves_like "unsuccessful API response"

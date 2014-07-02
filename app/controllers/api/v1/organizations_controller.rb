@@ -7,15 +7,23 @@ module Api
       end
 
       def create
-        organization = Organization.create! organization_params
+        expose Organization.create!(organization_params)
+      end
+
+      def update
+        organization.update!(organization_params)
         expose organization
       end
 
       def show
-        expose Organization.find(params[:id])
+        expose organization
       end
 
       private
+
+      def organization
+        @organization ||= Organization.find(params[:id])
+      end
 
       def organization_params
         params.require(:organization).permit(:name, :address, :email)
